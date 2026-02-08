@@ -1,35 +1,29 @@
 {
-    "functions": [
-        {
-            "source": "functions",
-            "codebase": "default",
-            "ignore": [
-                "node_modules",
-                ".git",
-                "firebase-debug.log",
-                "firebase-debug.*.log",
-                "*.local"
-            ]
-        }
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ]
+    }
+  ],
+  "hosting": {
+    "public": "src/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
     ],
-    "hosting": [
-        {
-            "target": "marketing",
-            "public": "src/web",
-            "ignore": [
-                "firebase.json",
-                "**/.*",
-                "**/node_modules/**"
-            ]
-        },
-        {
-            "target": "viewer",
-            "public": "src/view",
-            "ignore": [
-                "firebase.json",
-                "**/.*",
-                "**/node_modules/**"
-            ]
-        }
+    "rewrites": [
+      {
+        "source": "/certificate-viewer/**",
+        "destination": "/certificate-viewer/index.html"
+      }
     ]
+  }
 }
