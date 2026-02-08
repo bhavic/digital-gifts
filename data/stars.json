@@ -1,0 +1,7 @@
+[
+  { "id": "HR-7001", "displayName": "Asteria Prime", "raHours": 14.6601, "decDeg": -60.8339 },
+  { "id": "HR-2491", "displayName": "Velorum Echo", "raHours": 8.1589, "decDeg": -47.3366 },
+  { "id": "HR-8728", "displayName": "Nyx Beacon", "raHours": 22.1372, "decDeg": -46.9609 },
+  { "id": "HR-3982", "displayName": "Orionis Lumen", "raHours": 10.1234, "decDeg": 11.9672 },
+  { "id": "HR-1457", "displayName": "Selene Arc", "raHours": 4.5987, "decDeg": 16.5092 }
+]

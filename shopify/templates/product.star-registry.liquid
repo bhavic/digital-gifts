@@ -1,0 +1,24 @@
+{% comment %}
+Template: product.star-registry
+Captures mandatory gift metadata into line_item properties.
+{% endcomment %}
+
+<section class="star-product-template">
+  <h1>{{ product.title }}</h1>
+  <p>{{ product.description }}</p>
+
+  {% form 'product', product %}
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+
+    <label for="recipient-name">Recipient Name *</label>
+    <input id="recipient-name" type="text" name="properties[_Recipient_Name]" required />
+
+    <label for="star-name">Star Name *</label>
+    <input id="star-name" type="text" name="properties[_Star_Name]" required />
+
+    <label for="personal-message">Personal Message *</label>
+    <textarea id="personal-message" name="properties[_Personal_Message]" required></textarea>
+
+    <button type="submit">Add to cart</button>
+  {% endform %}
+</section>
