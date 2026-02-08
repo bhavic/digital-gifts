@@ -10,6 +10,11 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Install Functions Dependencies
         run: npm install
         working-directory: functions
@@ -20,3 +25,4 @@ jobs:
           args: deploy
         env:
           GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_AURAGIFTS_C5FA0 }}
+          PROJECT_ID: auragifts-c5fa0
