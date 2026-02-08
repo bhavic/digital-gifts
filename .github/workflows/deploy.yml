@@ -24,4 +24,4 @@ jobs:
           echo '${{ secrets.FIREBASE_SERVICE_ACCOUNT_AURAGIFTS_C5FA0 }}' > gcp_key.json
           export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp_key.json
           npm install -g firebase-tools
-          firebase deploy --non-interactive --project auragifts-c5fa0
+          firebase deploy --non-interactive --project auragifts-c5fa0 --force
