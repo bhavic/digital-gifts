@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestial Registry | Name a Star</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes giftingTicker {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .ticker-track {
+            animation: giftingTicker 28s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen overflow-x-hidden">
+    <canvas id="starfield" class="fixed inset-0 -z-10"></canvas>
+
+    <header class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
+        <h1 class="text-xl font-semibold tracking-widest uppercase">Celestial Registry</h1>
+        <nav class="hidden md:flex gap-4 text-sm text-slate-300">
+            <a href="#process" class="hover:text-white">How it works</a>
+            <a href="#plans" class="hover:text-white">Plans</a>
+            <a href="#media-gallery" class="hover:text-white">Gallery</a>
+        </nav>
+        <a href="#plans" class="text-sm border border-indigo-300/40 rounded-full px-4 py-2 hover:bg-indigo-500/20">Buy
+            Now</a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8 space-y-16">
+        <section class="grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <p class="text-indigo-300 uppercase text-xs tracking-[0.3em]">Premium Cosmic Gifting Experience</p>
+                <h2 class="text-5xl font-bold mt-4 leading-tight">Gift a real star with a luxury certificate, QR access,
+                    and optional live AR reveal.</h2>
+                <p class="mt-6 text-slate-300 text-lg">Perfect for birthdays, anniversaries, weddings, and milestone
+                    moments. Every order includes a unique star entry, beautiful digital delivery, and a private domain
+                    page active for 1 full year.</p>
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a href="#plans"
+                        class="bg-indigo-500 hover:bg-indigo-400 text-white font-medium rounded-xl px-6 py-3">Choose
+                        Your Plan</a>
+                    <a href="./certificate-sample.html"
+                        class="text-sm border border-indigo-300/40 rounded-xl px-6 py-3 hover:bg-indigo-500/20">View
+                        Full Certificate Sample</a>
+                </div>
+
+                <div class="mt-8 grid sm:grid-cols-3 gap-3 text-center text-sm">
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4"><strong class="block text-xl">INR
+                            499</strong>Digital Certificate</div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4"><strong class="block text-xl">INR
+                            999</strong>Digital + AR Reveal</div>
+                    <div class="bg-white/5 border border-white/10 rounded-xl p-4"><strong class="block text-xl">+INR
+                            499</strong>Printed Premium Frame</div>
+                </div>
+            </div>
+
+            <section class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6">
+                <h3 class="text-lg font-semibold">Live Certificate Preview</h3>
+                <p class="text-sm text-slate-300 mt-1">Type a recipient name and see your gift come alive instantly.</p>
+                <label class="block mt-4 text-sm text-slate-300">Recipient Name</label>
+                <input id="recipientInput" class="w-full mt-2 bg-slate-900 border border-slate-700 rounded-lg px-3 py-2"
+                    placeholder="e.g. Aarav Khanna" />
+
+                <article
+                    class="mt-6 bg-gradient-to-br from-slate-900 to-slate-800 border border-indigo-300/30 rounded-xl p-6">
+                    <p class="text-xs uppercase tracking-[0.25em] text-indigo-300">Certificate of Celestial Registration
+                    </p>
+                    <p class="mt-4 text-sm text-slate-300">This certifies that the star</p>
+                    <p id="starNamePreview" class="text-3xl font-serif mt-2">Asteria Prime</p>
+                    <p class="mt-4 text-sm text-slate-300">is lovingly dedicated to</p>
+                    <p id="recipientPreview" class="text-2xl mt-2">Your Recipient</p>
+                    <p class="mt-6 text-xs text-slate-400">RA 14h 39m 36s · Dec -60° 50′ 02″ · QR Included · Domain
+                        valid 1 year</p>
+                </article>
+            </section>
+        </section>
+
+        <section id="process" class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+            <h3 class="text-2xl font-semibold">How your gift journey works</h3>
+            <p class="mt-2 text-slate-300">Designed for instant wow factor and effortless gifting.</p>
+            <ol class="mt-6 grid md:grid-cols-5 gap-4 text-sm">
+                <li class="bg-slate-900/70 rounded-xl p-4 border border-slate-700"><strong>1) Choose
+                        package</strong><br />Pick Digital (INR 499) or Digital + AR (INR 999).</li>
+                <li class="bg-slate-900/70 rounded-xl p-4 border border-slate-700"><strong>2) Personalize
+                        details</strong><br />Recipient, star name, and personal message.</li>
+                <li class="bg-slate-900/70 rounded-xl p-4 border border-slate-700"><strong>3) Add optional
+                        frame</strong><br />Physical framed print +INR 499 on any plan.</li>
+                <li class="bg-slate-900/70 rounded-xl p-4 border border-slate-700"><strong>4) Instant digital
+                        delivery</strong><br />Certificate + QR + unique private domain.</li>
+                <li class="bg-slate-900/70 rounded-xl p-4 border border-slate-700"><strong>5) One-year live
+                        page</strong><br />Your recipient opens and shares their star page for 12 months.</li>
+            </ol>
+        </section>
+
+        <section
+            class="bg-gradient-to-r from-indigo-500/20 via-fuchsia-500/20 to-indigo-500/20 border border-white/15 rounded-2xl p-4 overflow-hidden">
+            <p class="text-xs uppercase tracking-[0.25em] text-indigo-200 mb-3">Live gifting activity</p>
+            <div class="overflow-hidden">
+                <div class="ticker-track flex w-max gap-3">
+                    <div class="flex gap-3 pr-3">
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Aanya
+                            gifted <strong>a star</strong> to Rohan ✨</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Karan
+                            surprised Meera with <strong>AR Reveal</strong> 🌌</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Priya chose
+                            <strong>Framed Certificate</strong> for Dad 💫</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Arjun named
+                            a star for Nisha on their anniversary ❤️</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Sana gifted
+                            Digital + AR to her best friend 🎁</span>
+                    </div>
+                    <div class="flex gap-3 pr-3" aria-hidden="true">
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Aanya
+                            gifted <strong>a star</strong> to Rohan ✨</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Karan
+                            surprised Meera with <strong>AR Reveal</strong> 🌌</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Priya chose
+                            <strong>Framed Certificate</strong> for Dad 💫</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Arjun named
+                            a star for Nisha on their anniversary ❤️</span>
+                        <span class="px-4 py-2 rounded-full bg-slate-900/80 border border-slate-600 text-sm">Sana gifted
+                            Digital + AR to her best friend 🎁</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="space-y-6">
+            <div>
+                <h3 class="text-3xl font-bold">Choose your gifting plan</h3>
+                <p class="text-slate-300 mt-2">Every plan includes star assignment, elegant digital certificate, QR, and
+                    unique domain access.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <article class="plan-card border border-indigo-400/50 bg-indigo-500/10 rounded-2xl p-6"
+                    data-plan="digital">
+                    <p class="uppercase tracking-[0.2em] text-xs text-indigo-300">Digital Certificate</p>
+                    <p class="text-4xl font-bold mt-2">INR 499</p>
+                    <ul class="mt-4 text-sm text-slate-200 space-y-2 list-disc list-inside">
+                        <li>Personalized digital certificate (HD)</li>
+                        <li>Unique QR linked to digital certificate page</li>
+                        <li>Unique domain live for 1 year</li>
+                        <li>Ideal for instant gifting</li>
+                        <li>Optional physical frame add-on (+INR 499)</li>
+                    </ul>
+                    <button
+                        class="select-plan mt-6 w-full rounded-xl py-3 bg-indigo-500 hover:bg-indigo-400 font-medium">Select
+                        Digital Plan</button>
+                </article>
+
+                <article class="plan-card border border-fuchsia-400/50 bg-fuchsia-500/10 rounded-2xl p-6"
+                    data-plan="ar">
+                    <p class="uppercase tracking-[0.2em] text-xs text-fuchsia-300">Digital + AR Reveal</p>
+                    <p class="text-4xl font-bold mt-2">INR 999</p>
+                    <ul class="mt-4 text-sm text-slate-200 space-y-2 list-disc list-inside">
+                        <li>Everything in Digital Certificate plan</li>
+                        <li>Mobile WebAR reveal to locate the gifted star</li>
+                        <li>Smart direction assistance (turn/tilt guidance)</li>
+                        <li>Unique AR QR embedded in certificate</li>
+                        <li>Optional physical frame with AR QR (+INR 499)</li>
+                    </ul>
+                    <button
+                        class="select-plan mt-6 w-full rounded-xl py-3 bg-fuchsia-500 hover:bg-fuchsia-400 font-medium">Select
+                        AR Plan</button>
+                </article>
+            </div>
+
+            <section class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+                <h4 class="text-xl font-semibold">Checkout Summary</h4>
+                <p id="selectedPlanText" class="mt-3 text-slate-300">Selected Plan: Digital Certificate (INR 499)</p>
+
+                <label class="mt-5 flex items-center gap-3 cursor-pointer">
+                    <input id="frameAddon" type="checkbox" class="h-5 w-5 rounded" />
+                    <span>Add physical framed certificate (+INR 499)</span>
+                </label>
+                <p class="text-xs text-slate-400 mt-2">Digital plan frame includes certificate QR. AR plan frame
+                    includes AR reveal QR.</p>
+
+                <p id="totalPrice" class="mt-6 text-3xl font-bold">Total: INR 499</p>
+                <button id="buyNow"
+                    class="mt-5 bg-indigo-500 hover:bg-indigo-400 text-white font-medium rounded-xl px-6 py-3">Buy
+                    Now</button>
+                <span id="buyStatus" class="text-sm text-slate-300 block mt-3"></span>
+            </section>
+        </section>
+
+        <section id="media-gallery" class="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+            <h3 class="text-2xl font-semibold">Visual Gallery (Manage from Shopify)</h3>
+            <p class="text-slate-300 mt-2">Upload your images/videos in Shopify Files and paste URLs in the JSON block
+                inside this page (or inject via theme settings/metafields).</p>
+            <div id="galleryGrid" class="grid md:grid-cols-3 gap-4 mt-6"></div>
+        </section>
+
+        <section class="grid md:grid-cols-3 gap-4 text-sm">
+            <article class="bg-white/5 border border-white/10 rounded-xl p-5">
+                <h4 class="font-semibold">What recipient gets instantly</h4>
+                <p class="text-slate-300 mt-2">Certificate PDF, QR link, private domain, and optional AR experience
+                    depending on plan.</p>
+            </article>
+            <article class="bg-white/5 border border-white/10 rounded-xl p-5">
+                <h4 class="font-semibold">Why people love this gift</h4>
+                <p class="text-slate-300 mt-2">Emotional, memorable, and highly shareable with a premium digital-first
+                    presentation.</p>
+            </article>
+            <article class="bg-white/5 border border-white/10 rounded-xl p-5">
+                <h4 class="font-semibold">Perfect for occasions</h4>
+                <p class="text-slate-300 mt-2">Birthdays, anniversaries, weddings, newborn milestones, and long-distance
+                    surprises.</p>
+            </article>
+        </section>
+    </main>
+
+    <script id="shopifyMediaConfig" type="application/json">
+      [
+        {"type":"image","url":"https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1200&q=80","title":"Premium digital certificate preview"},
+        {"type":"image","url":"https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&w=1200&q=80","title":"Framed gift concept"},
+        {"type":"video","url":"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4","title":"AR reveal demo clip"}
+      ]
+    </script>
+    <script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
+    <script type="module" src="./app.js"></script>
+</body>
+
+</html>
